@@ -262,6 +262,7 @@
                       <th>Denies</th>
                       <th>Level</th>
                       <th>GPM</th>
+                      <th>Xpm</th>
                       <th>Rank:</th>
                       <th>Networth</th>
                       <th>Kills</th>
@@ -277,149 +278,31 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Axe</td>
+                    <tr *ngFor="let row of table1Data">
+                      <td>
+                        <img src={{row.image}} style="height: 50px;" alt=""/>
+                      </td>
                       <td>Radiant</td>
-                      <td>2500</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td>Axe</td>
-                      <td>Anti-Mage</td>
-                      <td>2500</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td>Bane</td>
-                      <td>Radiant</td>
-                      <td>2500</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td>Shadow Fiend</td>
-                      <td>Radiant</td>
-                      <td>2500</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td>Lion</td>
-                      <td>Radiant</td>
-                      <td>2500</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td>Lifestealer</td>
-                      <td>Radiant</td>
-                      <td>2500</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>3</td>
+                      <td>{{row.networth}}</td>
+                      <td>{{row.k}}</td>
+                      <td>{{row.d}}</td>
+                      <td>{{row.a}}</td>
+                      <td>{{row.lh}}</td>
+                      <td>{{row.denies}}</td>
+                      <td>{{row.level}}</td>
+                      <td>{{row.gpm}}</td>
+                      <td>{{row.xpm}}</td>
+                      <td>&nbsp;&nbsp;&nbsp;|</td>
+                      <td>{{row.networth}}</td>
+                      <td>{{row.k}}</td>
+                      <td>{{row.d}}</td>
+                      <td>{{row.a}}</td>
+                      <td>{{row.lh}}</td>
+                      <td>{{row.denies}}</td>
+                      <td>{{row.level}}</td>
+                      <td>{{row.gpm}}</td>
+                      <td>{{row.xpm}}</td>
+                      <td>Avg. Rank</td>
                     </tr>
                   </tbody>
                   </table>

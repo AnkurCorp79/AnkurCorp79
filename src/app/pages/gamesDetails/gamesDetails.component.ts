@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Chart, ChartData, ChartDataSets, ChartOptions } from "chart.js";
-import { LineChart1 } from "./gamesDetails.service";
+import { LineChart1, Table1 } from "./gamesDetails.service";
 
 @Component({
   selector: "game-details",
@@ -27,6 +27,7 @@ export class GameDetailsDashboard implements OnInit {
 
   horizontalBar1: LineChart1[];
   horizontalBar2: LineChart1[];
+  table1Data: Table1[];
   selectedName ;
   public starChartType = 'line' ;
   public lineChartLegend = true;
@@ -53,7 +54,7 @@ export class GameDetailsDashboard implements OnInit {
               id: 'y-axis-0',
               position: 'left',
               scaleLabel: {
-                display: true,
+                display: false,
               },
               ticks: {
                 beginAtZero: true
@@ -63,7 +64,7 @@ export class GameDetailsDashboard implements OnInit {
               id: 'y-axis-1',
               position: 'right',
               scaleLabel: {
-                display: true,
+                display: false,
                 labelString: 'Property Rank'
               },
               ticks: {
@@ -83,6 +84,139 @@ export class GameDetailsDashboard implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+
+    this.table1Data = [
+      {
+          "hero": "52",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/leshrac.png",
+          "networth": "20992",
+          "k": "6",
+          "d": "2",
+          "a": "6",
+          "lh": "446",
+          "denies": "9",
+          "level": "25",
+          "gpm": "689",
+          "xpm": "914"
+      },
+      {
+          "hero": "47",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png",
+          "networth": "13515",
+          "k": "11",
+          "d": "4",
+          "a": "3",
+          "lh": "170",
+          "denies": "12",
+          "level": "19",
+          "gpm": "430",
+          "xpm": "530"
+      },
+      {
+          "hero": "16",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/sand_king.png",
+          "networth": "13077",
+          "k": "4",
+          "d": "5",
+          "a": "8",
+          "lh": "250",
+          "denies": "3",
+          "level": "18",
+          "gpm": "428",
+          "xpm": "475"
+      },
+      {
+          "hero": "88",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+          "networth": "3554",
+          "k": "2",
+          "d": "8",
+          "a": "7",
+          "lh": "13",
+          "denies": "1",
+          "level": "14",
+          "gpm": "183",
+          "xpm": "320"
+      },
+      {
+          "hero": "123",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/hoodwink.png",
+          "networth": "7138",
+          "k": "2",
+          "d": "4",
+          "a": "14",
+          "lh": "66",
+          "denies": "2",
+          "level": "18",
+          "gpm": "272",
+          "xpm": "462"
+      },
+      {
+          "hero": "43",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/death_prophet.png",
+          "networth": "6098",
+          "k": "2",
+          "d": "6",
+          "a": "10",
+          "lh": "24",
+          "denies": "1",
+          "level": "15",
+          "gpm": "260",
+          "xpm": "377"
+      },
+      {
+          "hero": "49",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
+          "networth": "14962",
+          "k": "1",
+          "d": "6",
+          "a": "10",
+          "lh": "219",
+          "denies": "2",
+          "level": "21",
+          "gpm": "475",
+          "xpm": "606"
+      },
+      {
+          "hero": "42",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skeleton_king.png",
+          "networth": "22103",
+          "k": "7",
+          "d": "4",
+          "a": "2",
+          "lh": "357",
+          "denies": "2",
+          "level": "23",
+          "gpm": "689",
+          "xpm": "759"
+      },
+      {
+          "hero": "90",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
+          "networth": "12385",
+          "k": "4",
+          "d": "5",
+          "a": "14",
+          "lh": "148",
+          "denies": "1",
+          "level": "19",
+          "gpm": "402",
+          "xpm": "546"
+      },
+      {
+          "hero": "106",
+          "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "networth": "15506",
+          "k": "8",
+          "d": "5",
+          "a": "14",
+          "lh": "204",
+          "denies": "5",
+          "level": "23",
+          "gpm": "499",
+          "xpm": "737"
+      }
+  ];
 
    let lineChart1 = [
       {
@@ -217,7 +351,7 @@ export class GameDetailsDashboard implements OnInit {
   "name" : "Dire",
   "data" : [50,60,80,75,70,30,50],
   "color" : "blue"
-  };
+  }];
 
   let barChart2 = [{
     "name" : "Radiant",
@@ -237,7 +371,7 @@ export class GameDetailsDashboard implements OnInit {
     this.lineChart6Data = lineChart6;
 
     this.horizontalBar1 = barChart1;
-    this.horizontalBar1 = barChart2;
+    this.horizontalBar2 = barChart2;
 
     // this.hotelStarReportForKPI.kpiData[0].label = 'My Property Rank out of';
     // this.hotelStarReportForKPI.kpiData[0].data = [100, 212,10,23,47,86,94,91];
@@ -269,14 +403,11 @@ export class GameDetailsDashboard implements OnInit {
       },
 
       tooltips: {
-        backgroundColor: '#f5f5f5',
-        titleFontColor: '#333',
-        bodyFontColor: '#666',
         bodySpacing: 4,
         xPadding: 12,
         mode: "nearest",
         intersect: 0,
-        position: "nearest",
+        position: "nearest"
       },
       responsive: true,
       scales: {
@@ -284,25 +415,25 @@ export class GameDetailsDashboard implements OnInit {
           id: 'y-axis-1',
           position: 'right',
           scaleLabel: {
-            display: true,
+            display: false,
           },
           ticks: {
             beginAtZero: false,
             reverse: false,
             min: -100,
             stepSize: 100
-          },
+          }
         }],
 
         xAxes: [{
-          barPercentage: 1.6,
+          //barPercentage: 1.6,
           gridLines: {
-            drawBorder: false,
+            drawBorder: true,
             color: 'rgba(233,32,16,0.1)',
             zeroLineColor: "transparent",
           },
           ticks: {
-            fontColor: "#9a9a9a",
+            fontColor: "rgba(255, 255, 255, 0.7)",
             stepSize: 1000,
             display: false,
           }
@@ -314,7 +445,7 @@ export class GameDetailsDashboard implements OnInit {
     var gradientChartOptionsConfigurationWithTooltipGreen: any = {
       maintainAspectRatio: false,
       legend: {
-        display: false
+        display: false,
       },
 
       tooltips: {
@@ -664,19 +795,6 @@ export class GameDetailsDashboard implements OnInit {
     });
 
 
-
-    var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    this.datasets = [
-      [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100],
-      [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120],
-      [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130]
-    ];
-    this.data = this.datasets[0];
-
-
-
-
-
     this.canvas = document.getElementById("barChart1");
     this.ctx  = this.canvas.getContext("2d");
     var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
@@ -685,26 +803,85 @@ export class GameDetailsDashboard implements OnInit {
     gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
+    let barChart1Data: any[] = [];
+    for( let i=0; i<this.horizontalBar1.length; i++){
 
-    var myChart = new Chart(this.ctx, {
-      type: 'bar',
-
-      data: {
-        labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-        datasets: [{
-          label: "Countries",
+      barChart1Data.push({
+          label: this.horizontalBar1[i].name,
           fill: true,
-          backgroundColor: gradientStroke,
-          hoverBackgroundColor: gradientStroke,
-          borderColor: '#1f8ef1',
+          backgroundColor: this.horizontalBar1[i].color,
+          borderColor: this.horizontalBar1[i].color,
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
-        }]
+          pointBackgroundColor: this.horizontalBar1[i].color,
+          pointBorderColor: this.horizontalBar1[i].color,
+          pointHoverBackgroundColor: this.horizontalBar1[i].color,
+          pointBorderWidth: 0,
+          pointHoverRadius: 0,
+          pointHoverBorderWidth: 0,
+          pointRadius: 0,
+          data: this.horizontalBar1[i].data,
+        });
+    }
+
+    var myChart1 = new Chart(this.ctx, {
+      type: 'horizontalBar',
+
+      data: {
+        labels: ['General Idea', 'Current Form', 'World Ranking', 'Head to Head', 'Draft Calc', 'Practice on Picks', 'Patch Calc'],
+        datasets: barChart1Data
       },
-      options: gradientBarChartConfiguration
+      options: {
+        legend: {
+          display: true,
+          position : "bottom",
+        align : "center",
+        labels: {
+          boxWidth: 10
+        }
+        },
+        responsive: true,
+        scales: {
+          xAxes: [{
+            ticks: {
+                beginAtZero:true,
+                fontFamily: "'Open Sans Bold', sans-serif",
+                fontSize:10,
+                mirror : true
+            },
+            scaleLabel:{
+                display:false,
+            },
+            gridLines: {
+
+            },
+            stacked: true
+        }],
+        yAxes: [{
+            gridLines: {
+                display:false,
+                color: "#fff",
+                zeroLineColor: "#fff",
+                zeroLineWidth: 0,
+
+            },
+            ticks: {
+                fontFamily: "'Open Sans Bold', sans-serif",
+                fontSize:10
+            },
+            stacked: true,
+        }]
+    },
+        plugins: {
+          legend: {
+            position: 'right',
+          },
+        }
+      },
     });
+
+
 
     this.canvas1 = document.getElementById("barChart2");
     this.ctx  = this.canvas1.getContext("2d");
@@ -714,122 +891,44 @@ export class GameDetailsDashboard implements OnInit {
     gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
-    var gradientBarChartConfiguration1: any = {
-      maintainAspectRatio: false,
-      indexAxis: 'y',
-      legend: {
-        display: false
-      },
+    let barChart2Data: any[] = [];
+    for( let i=0; i<this.horizontalBar2.length; i++){
 
-      tooltips: {
-        backgroundColor: '#f5f5f5',
-        titleFontColor: '#333',
-        bodyFontColor: '#666',
-        bodySpacing: 4,
-        xPadding: 12,
-        mode: "nearest",
-        intersect: 0,
-        position: "nearest"
-      },
-      responsive: true,
-      scales: {
-        yAxes: [{
+      barChart2Data.push({
+          label: this.horizontalBar2[i].name,
+          fill: true,
+          backgroundColor: this.horizontalBar2[i].color,
+          borderColor: this.horizontalBar2[i].color,
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: this.horizontalBar2[i].color,
+          pointBorderColor: this.horizontalBar2[i].color,
+          pointHoverBackgroundColor: this.horizontalBar2[i].color,
+          pointBorderWidth: 0,
+          pointHoverRadius: 0,
+          pointHoverBorderWidth: 0,
+          pointRadius: 0,
+          data: this.horizontalBar2[i].data,
+        });
+    }
 
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            suggestedMin: 60,
-            suggestedMax: 120,
-            padding: 20,
-            fontColor: "#9e9e9e"
-          }
-        }],
 
-        xAxes: [{
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            padding: 20,
-            fontColor: "#9e9e9e"
-          }
-        }]
-      }
-    };
     var myChart1 = new Chart(this.ctx, {
       type: 'horizontalBar',
 
       data: {
-        labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-        datasets: [{
-          label: "Dire",
-          fill: true,
-          backgroundColor: '#1f8ef1',
-          hoverBackgroundColor: '#1f8ef1',
-          borderColor: '#1f8ef1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          data: [
-            3,
-            7,
-            5,
-            9,
-            7,
-            7,
-            9,
-            8,
-            1,
-            1,
-            1,
-            1,
-            2,
-            2,
-            2,
-            5,
-            1,
-            1,
-          ],
-        },
-        {
-          label: "Radiant",
-          fill: true,
-          backgroundColor: 'red',
-          hoverBackgroundColor: 'red',
-          borderColor: 'red',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          data: [
-            3,
-            7,
-            5,
-            9,
-            7,
-            7,
-            9,
-            8,
-            1,
-            1,
-            1,
-            1,
-            2,
-            2,
-            2,
-            5,
-            1,
-            1,
-          ],
-        }]
+        labels: ['General Idea', 'Current Form', 'World Ranking', 'Head to Head', 'Draft Calc', 'Practice on Picks', 'Patch Calc'],
+        datasets: barChart2Data
       },
       options: {
         legend: {
-          display: false
+          display: true,
+          position : "bottom",
+          align : "center",
+          "labels": {
+            "boxWidth": 10
+          }
         },
         responsive: true,
         scales: {
@@ -837,7 +936,7 @@ export class GameDetailsDashboard implements OnInit {
             ticks: {
                 beginAtZero:true,
                 fontFamily: "'Open Sans Bold', sans-serif",
-                fontSize:11
+                fontSize:10
             },
             scaleLabel:{
                 display:false
@@ -855,7 +954,7 @@ export class GameDetailsDashboard implements OnInit {
             },
             ticks: {
                 fontFamily: "'Open Sans Bold', sans-serif",
-                fontSize:11
+                fontSize:10
             },
             stacked: true
         }]
