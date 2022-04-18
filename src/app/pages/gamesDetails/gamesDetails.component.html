@@ -1,0 +1,507 @@
+
+<!-- Game Details -->
+<div style="padding-top: 65px;">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+         <div class=" card-header">
+          <h4 class=" card-title back-botton" style="cursor: pointer;" (click)="goBack()"><i class="fa fa-solid fa-arrow-left"></i> BACK</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th rowspan="2">Match Id</th>
+                  <th rowspan="2">Game</th>
+                  <th rowspan="2">Team 1 Name</th>
+                  <th rowspan="2">Team 2 Name</th>
+                  <th rowspan="2">Duration</th>
+                  <th rowspan="2">Team 1 Win%</th>
+                  <th rowspan="2">Team 2 Win%</th>
+                  <th rowspan="2">Comeback chance</th>
+                  <th rowspan="2">Networth</th>
+                  <th rowspan="2">Kills</th>
+                  <th rowspan="2">Results</th>
+
+                  <th colspan="3" class=" text-center">Prediction</th>
+                  <th colspan="3" class=" text-center">Comeback chance</th>
+                </tr>
+                <tr>
+                  <th>17:51</th>
+                  <th>20:01</th>
+                  <th>25:01</th>
+
+                  <th>20%</th>
+                  <th>12%</th>
+                  <th>8%</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr >
+                  <td>ABC</td>
+                  <td>Dota 2 / CS:GO / LoL</td>
+                  <td>Team 1</td>
+                  <td>Team 2</td>
+                  <td>23:10:00</td>
+                  <td>60%</td>
+                  <td>40%</td>
+                  <td>Team 1 60%</td>
+                  <td>-5000</td>
+                  <td>-3</td>
+                  <td>Pending</td>
+                  <td>When 75% after 15th min</td>
+                  <td>When 75% after 20th min</td>
+                  <td>When 75% after 25th min</td>
+                  <td>At all 3 recorded times of 75% prediction</td>
+                  <td>At all 3 recorded times of 75% prediction</td>
+                  <td>At all 3 recorded times of 75% prediction</td>
+                </tr>
+                </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Graph Section -->
+<div>
+  <div class=" row">
+    <div class=" col-lg-2">
+      <div class=" col-lg-12">
+        <div class=" card card-chart" style="height: 287px;">
+          <div class=" card-header">
+          </div>
+          <div class=" card-body">
+            <div class=" chart-area"><canvas id="barChart1"> </canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-lg-12">
+        <div class=" card card-chart" style="height: 287px;">
+          <div class=" card-header">
+
+          </div>
+          <div class=" card-body">
+            <div class=" chart-area"><canvas id="barChart2"> </canvas></div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class=" col-lg-6">
+
+
+  <div class=" row">
+    <div class=" col-lg-4">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <h5 class=" card-category">Team Fight</h5>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area">
+            <canvas id="chartLine1"> </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-4">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <h5 class=" card-category">Live Advantage</h5>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area"><canvas id="chartLine2"> </canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-4">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <h5 class=" card-category">Main Advantage</h5>
+        </div>
+        <div class=" card-body">
+          <div class=" chart-area"><canvas id="chartLine3"> </canvas></div>
+        </div>
+      </div>
+    </div>
+      <div class=" col-lg-4">
+        <div class=" card card-chart">
+          <div class=" card-header">
+            <h5 class=" card-category">Time Graph 4</h5>
+          </div>
+          <div class=" card-body">
+            <div class=" chart-area"><canvas id="chartLine4"> </canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-lg-4">
+        <div class=" card card-chart">
+          <div class=" card-header">
+            <h5 class=" card-category">Heroes Rank Timeline</h5>
+          </div>
+          <div class=" card-body">
+            <div class=" chart-area"><canvas id="chartLine5"> </canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-lg-4">
+        <div class=" card card-chart">
+          <div class=" card-header">
+            <h5 class=" card-category">Talent Tree Calc</h5>
+          </div>
+          <div class=" card-body">
+            <div class=" chart-area"><canvas id="chartLine6"> </canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" col-lg-2">
+
+    <div class=" row">
+      <div class=" col-lg-12">
+        <div class=" card">
+          <img src="assets/img/Dota2.png" alt="image">
+        <br/>
+        <select ng-model="selectedName" style="background: #27294d;">
+          <option value="10min">10 minutes</option>
+          <option value="20min">20 minutes</option>
+          <option value="30min">30 minutes</option>
+        </select>
+        </div>
+        </div>
+
+        <div class=" col-lg-12">
+          <div class=" card">
+          Win Chance
+          All figures helping to calculate
+          the win chance
+          </div>
+        </div>
+
+        <div class=" col-lg-12">
+          <div class=" card">
+          Networth Odds
+          All figures helping to calculate
+          the win chance
+          </div>
+        </div>
+
+        <div class=" col-lg-12">
+          <div class=" card">
+          Kills Odds
+          All figures helping to calculate
+          the win chance
+          </div>
+        </div>
+        </div>
+
+
+  </div>
+  <div class=" col-lg-2">
+    <div class=" card">
+      <!-- <div class=" card-header">
+        <h4 class=" card-title">Simple Table</h4>
+      </div> -->
+      <div class=" card-body">
+        <div class=" table-responsive">
+          <table class=" table tablesorter" id="">
+            <tbody>
+              <tr>
+                <td>Comeback Chance:</td>
+                <td>6%</td>
+              </tr>
+              <tr>
+                <td>Comeback Chance:</td>
+                <td>6%</td>
+              </tr>
+              <tr>
+                <td>Comeback Chance:</td>
+                <td>6%</td>
+
+              </tr>
+              <tr>
+                <td>Comeback Chance:</td>
+                <td>6%</td>
+
+              </tr>
+              <tr>
+                <td>Comeback Chance:</td>
+                <td>6%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <!-- Table 2 Section -->
+
+    <div >
+      <div class=" row">
+        <div class=" col-md-12">
+          <div class=" card">
+            <!-- <div class=" card-header">
+              <h4 class=" card-title">Simple Table</h4>
+            </div> -->
+            <div class=" card-body">
+              <div class=" table-responsive">
+                <table class=" table tablesorter" id="">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>Heroes</th>
+                      <th>Team</th>
+                      <th>Networth</th>
+                      <th>Kills</th>
+                      <th>Deaths</th>
+                      <th>Assists</th>
+                      <th>LH</th>
+                      <th>Denies</th>
+                      <th>Level</th>
+                      <th>GPM</th>
+                      <th>Rank:</th>
+                      <th>Networth</th>
+                      <th>Kills</th>
+                      <th>Deaths</th>
+                      <th>Assists</th>
+                      <th>LH</th>
+                      <th>Denies</th>
+                      <th>Level</th>
+                      <th>GPM</th>
+                      <th>Xpm</th>
+                      <th>Avg. Rank</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Axe</td>
+                      <td>Radiant</td>
+                      <td>2500</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Axe</td>
+                      <td>Anti-Mage</td>
+                      <td>2500</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Bane</td>
+                      <td>Radiant</td>
+                      <td>2500</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Shadow Fiend</td>
+                      <td>Radiant</td>
+                      <td>2500</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Lion</td>
+                      <td>Radiant</td>
+                      <td>2500</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Lifestealer</td>
+                      <td>Radiant</td>
+                      <td>2500</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+
+
+    <!-- Table 3 Section -->
+
+    <div >
+      <div class=" row">
+        <div class=" col-md-12">
+          <div class=" card">
+            <!-- <div class=" card-header">
+              <h4 class=" card-title">Simple Table</h4>
+            </div> -->
+            <div class=" card-body">
+              <div class=" table-responsive">
+                <table class=" table tablesorter" id="">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>Full Draft</th>
+                      <th>Radiant</th>
+                      <th>Dire</th>
+                      <th>Radiant %</th>
+                      <th>Dire %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>early</td>
+                      <td>8.5</td>
+                      <td>10</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>mid</td>
+                      <td>8.5</td>
+                      <td>13.5</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>late</td>
+                      <td>9</td>
+                      <td>13</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>lane def</td>
+                      <td>4</td>
+                      <td>10</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>late effect</td>
+                      <td>8.5</td>
+                      <td>10</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>full disab</td>
+                      <td>8.5</td>
+                      <td>10</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
