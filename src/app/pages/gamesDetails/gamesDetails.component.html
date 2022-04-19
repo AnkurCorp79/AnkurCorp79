@@ -164,12 +164,11 @@
       <div class=" col-lg-12">
         <div class=" card">
           <img src="assets/img/Dota2.png" alt="image">
-        <br/>
-        <select ng-model="selectedName" style="background: #27294d;">
-          <option value="10min">10 minutes</option>
-          <option value="20min">20 minutes</option>
-          <option value="30min">30 minutes</option>
-        </select>
+        <div class="custom-slider">
+          <ngx-slider [(value)]="value" [(ngModel)]="selectedName" (valueChange)="comboitemChange()" [options]="options">
+          </ngx-slider>
+        </div>
+        
         </div>
         </div>
 

@@ -9,6 +9,7 @@ import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { GamesDashboard } from "src/app/pages/gamesDashboard/gamesDashboard.component";
 import { GameDetailsDashboard } from "src/app/pages/gamesDetails/gamesDetails.component";
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { GameDetailsDashboard } from "src/app/pages/gamesDetails/gamesDetails.co
     FormsModule,
     HttpClientModule,
     NgbModule,
+    NgxSliderModule
   ],
   declarations: [
     GamesDashboard,
