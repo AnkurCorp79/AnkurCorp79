@@ -2,10 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Chart, ChartData, ChartDataSets, ChartOptions } from "chart.js";
 import { LineChart1, Table1 } from "./gamesDetails.service";
+import { Options } from '@angular-slider/ngx-slider';
+
 
 @Component({
   selector: "game-details",
-  templateUrl: "gamesDetails.component.html"
+  templateUrl: "gamesDetails.component.html",
+  styleUrls:['./ng_slider_style.scss']
 })
 export class GameDetailsDashboard implements OnInit {
   public canvas : any;
@@ -28,9 +31,26 @@ export class GameDetailsDashboard implements OnInit {
   horizontalBar1: LineChart1[];
   horizontalBar2: LineChart1[];
   table1Data: Table1[];
-  selectedName ;
+  selectedName =10;
   public starChartType = 'line' ;
   public lineChartLegend = true;
+  value: number = 10;
+  options: Options = {
+    floor: 10,
+    ceil: 30,
+    step: 10,
+    showTicks: true,
+    showTicksValues: true,
+    stepsArray: [
+      {value: 10, legend: '10'},
+      {value: 20, legend: '20'},
+      {value: 30, legend: '30'},
+    ]
+  };
+
+  comboitemChange(){
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>slider",this.value);
+  }
 
   public lineChartOptionsForHotelStarReport: ChartOptions = {
     //    animation: false,

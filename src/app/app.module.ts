@@ -16,6 +16,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { LoginComponent } from "./pages/login/login.component";
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -27,7 +28,7 @@ import { LoginComponent } from "./pages/login/login.component";
     AppRoutingModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
   ],
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent],
   providers: [LoginComponent],
